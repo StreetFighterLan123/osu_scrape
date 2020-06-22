@@ -25,9 +25,9 @@ for div in divs:
         for pebble in rankTD:
             if "Rank" not in pebble:
                 my_variable_names_suck += pebble
-        for cookiezi in accuracyTD:
-            if "Accuracy" not in cookiezi:
-                bruh_momento += cookiezi
+        for rrtyui in accuracyTD:
+            if "Accuracy" not in rrtyui:
+                bruh_momento += rrtyui
         #print(string)
 
 ppList = string.split()
