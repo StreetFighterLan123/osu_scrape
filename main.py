@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-raw = input("User: ").lower().strip()
+raw = input("Player: ").lower().strip()
 
 result = requests.get(f'https://ameobea.me/osutrack/user/{raw}/')
 
@@ -9,18 +9,14 @@ src = result.content
 
 soup = BeautifulSoup(src, "lxml")
 
+divs = soup.find_all("div")
 
-mydivs = soup.find_all("div")
-
-ppdivs = []
 string = ""
 my_variable_names_suck = ""
-for div in mydivs:
+for div in divs:
     if "PP" in div.text:
-        ppdivs.append(div.text)
         ppTD = soup.find_all('td')[1]
         rankTD = soup.find_all('td')[0]
-        #print(poopoo_thing)
         for diarrhea in ppTD:
             if "PP" not in diarrhea:
                 string += diarrhea
