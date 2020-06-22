@@ -27,6 +27,6 @@ for div in mydivs:
 ppList = string.split()
 pp = float(ppList[0])
 
-print("{:,}".format(pp))
-
+y = "{:,}".format(pp)
+print(f'PP: {y}')
 
