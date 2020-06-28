@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 running = True
 
 while running:
-
+    print("\n")
     raw = input("Player: ").lower().strip()
 
     result = requests.get(f'https://ameobea.me/osutrack/user/{raw}/')
