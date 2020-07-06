@@ -1,3 +1,9 @@
+This is an Osu Web Scraper which will tell you the PP, Rank, and Accuracy of a player (osu!std). Scroll down for the installation guide.
+
+Devlogs:
+
+
+================
 INSTALLATION GUIDE:
 
 Method 1 (exe file):
