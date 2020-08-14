@@ -1,4 +1,4 @@
-import requests, time
+import requests, time, re
 from bs4 import BeautifulSoup
 running = True
 
