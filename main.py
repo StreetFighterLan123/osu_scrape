@@ -12,37 +12,27 @@ while running:
 
     soup = BeautifulSoup(src, "lxml")
 
-    divs = soup.find_all("div")
+    ppString = ""
+    rankString = ""
+    accString = ""
 
-    string = ""
-    my_variable_names_suck = ""
-    bruh_momento = ""
-    for div in divs:
-        if "PP" in div.text:
-            rankTD = soup.find_all('td')[0]
-            ppTD = soup.find_all('td')[1]
-            accuracyTD = soup.find_all('td')[2]
-            for diarrhea in ppTD:
-                if "PP" not in diarrhea:
-                    string += diarrhea
-            for pebble in rankTD:
-                if "Rank" not in pebble:
-                    my_variable_names_suck += pebble
-            for rrtyui in accuracyTD:
-                if "Accuracy" not in rrtyui:
-                    bruh_momento += rrtyui
-        #print(string)
+    links = soup.find_all('a')
+    print(links[18].text)
 
-    ppList = string.split()
-    pp = float(ppList[0])
-    formatted_pp = "{:,}".format(pp)
+    rankTD = soup.find_all('td')[0]
+    ppTD = soup.find_all('td')[1]
+    accuracyTD = soup.find_all('td')[2]
 
-    rankList = my_variable_names_suck.split()
-    rank = rankList[0]
-
-    accuracyList = bruh_momento.split()
-    accuracy = accuracyList[0]
-    print(f'\nPP: {formatted_pp} \nRank: {rank}\nAccuracy: {accuracy}')
+    for diarrhea in ppTD:
+        if "PP" not in diarrhea:
+            ppString += diarrhea
+    for pebble in rankTD:
+        if "Rank" not in pebble:
+            rankString += pebble
+    for rrtyui in accuracyTD:
+        if "Accuracy" not in rrtyui:
+            accString += rrtyui
+    print(f'\nPP: {ppString.strip()} \nRank: {rankString.strip()}\nAccuracy: {accString.strip()}')
     print("\n")
     kill = input("Quit? (y/n)")
     killf = kill.lower().strip()
