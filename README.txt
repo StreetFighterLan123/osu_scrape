@@ -28,4 +28,3 @@ python main.py
 
 Have fun.
 
-- Omar
